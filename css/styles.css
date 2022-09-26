@@ -2,7 +2,7 @@
   --accent-color: #2196f3;
   --title-color: #212121;
   --text-color: #757575;
-  --logo-color: #000000;
+  --black-color: #000000;
   --neutral-dark-color: rgba(255, 255, 255, 0.6);
   --primary-white-color: #ffffff;
   --primary-dark-color: #2f303a;
@@ -13,6 +13,8 @@
   --footer-links-color: rgba(255, 255, 255, 0.1);
   --cards-background-color: rgba(47, 48, 58, 0.8);
   --portfolio-overlay-color: rgba(33, 150, 243, 0.9);
+  --backdrop-background-color: rgba(0, 0, 0, 0.2);
+  --button-border-color:rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -87,7 +89,7 @@ img {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   line-height: 1.15;
-  color: var(--logo-color);
+  color: var(--black-color);
 }
 
 .logo span {
@@ -476,6 +478,59 @@ img {
   font-size: 16px;
   line-height: 1.87;
   color: var(--text-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-background-color);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 581px;
+  min-width: 528px;
+  background-color: var(--primary-white-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid var(--button-border-color);
+  border-radius: 50%;
+  background-color: inherit;
+  color: var(--black-color);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.close-icon {
+  fill: currentColor;
 }
 
 .page-footer {
